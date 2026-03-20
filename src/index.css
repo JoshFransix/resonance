@@ -96,12 +96,12 @@ canvas {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1F1F2A;
+  background: #1f1f2a;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2A2A3A;
+  background: #2a2a3a;
 }
 
 /* Custom Range Slider */
@@ -112,7 +112,7 @@ input[type="range"].slider {
 }
 
 input[type="range"].slider::-webkit-slider-track {
-  background: #1F1F2A;
+  background: #1f1f2a;
   border-radius: 4px;
   height: 8px;
 }
@@ -123,7 +123,7 @@ input[type="range"].slider::-webkit-slider-thumb {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #EAEAF0;
+  background: #eaeaf0;
   cursor: pointer;
   margin-top: -4px;
   transition: all 0.2s;
@@ -135,7 +135,7 @@ input[type="range"].slider::-webkit-slider-thumb:hover {
 }
 
 input[type="range"].slider::-moz-range-track {
-  background: #1F1F2A;
+  background: #1f1f2a;
   border-radius: 4px;
   height: 8px;
 }
@@ -144,7 +144,7 @@ input[type="range"].slider::-moz-range-thumb {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #EAEAF0;
+  background: #eaeaf0;
   cursor: pointer;
   border: none;
   transition: all 0.2s;

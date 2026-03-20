@@ -1,12 +1,12 @@
-import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Environment, ContactShadows } from '@react-three/drei';
-import { AdvancedProductModel } from './AdvancedProductModel';
-import { AdvancedLighting } from './AdvancedLighting';
-import { InteractiveControls } from './InteractiveControls';
-import { AdvancedAnnotations } from './AdvancedAnnotations';
-import { PostProcessing } from './PostProcessing';
-import { SceneHelpers } from './SceneHelpers';
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Environment, ContactShadows } from "@react-three/drei";
+import { AdvancedProductModel } from "./AdvancedProductModel";
+import { AdvancedLighting } from "./AdvancedLighting";
+import { InteractiveControls } from "./InteractiveControls";
+import { AdvancedAnnotations } from "./AdvancedAnnotations";
+import { PostProcessing } from "./PostProcessing";
+import { SceneHelpers } from "./SceneHelpers";
 
 export function ProductScene() {
   return (
@@ -18,22 +18,18 @@ export function ProductScene() {
         alpha: true,
         toneMapping: 2,
         toneMappingExposure: 1.2,
-        powerPreference: 'high-performance',
+        powerPreference: "high-performance",
       }}
       dpr={[1, 2]}
     >
-      <color attach="background" args={['#0B0B0D']} />
-      
+      <color attach="background" args={["#0B0B0D"]} />
+
       <AdvancedLighting />
       <InteractiveControls />
       <SceneHelpers />
 
       <Suspense fallback={null}>
-        <Environment
-          files="/hdr/studio.hdr"
-          background={false}
-          blur={0.6}
-        />
+        <Environment files="/hdr/studio.hdr" background={false} blur={0.6} />
 
         <AdvancedProductModel />
         <AdvancedAnnotations />

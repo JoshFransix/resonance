@@ -1,7 +1,7 @@
-import { useProductStore } from '@/store/useProductStore';
-import { VariantSelector } from './VariantSelector';
-import { ControlPanel } from './ControlPanel';
-import { PartsExplorer } from './PartsExplorer';
+import { useProductStore } from "@/store/useProductStore";
+import { VariantSelector } from "./VariantSelector";
+import { ControlPanel } from "./ControlPanel";
+import { PartsExplorer } from "./PartsExplorer";
 
 export function AdvancedOverlay() {
   const selectedPart = useProductStore((state) => state.selectedPart);
@@ -12,19 +12,23 @@ export function AdvancedOverlay() {
       <header className="fixed top-0 left-0 right-0 z-50 px-8 py-6 bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-text-primary font-bold text-3xl tracking-tight mb-1">Resonance</h1>
-            <p className="text-text-secondary text-sm">Premium Audio Experience</p>
+            <h1 className="text-text-primary font-bold text-3xl tracking-tight mb-1">
+              Resonance
+            </h1>
+            <p className="text-text-secondary text-sm">
+              Premium Audio Experience
+            </p>
           </div>
           <div className="flex items-center gap-4">
             <div className="text-right">
               <p className="text-text-primary font-medium text-sm">
-                {viewMode === 'standard' && 'Standard View'}
-                {viewMode === 'exploded' && 'Exploded View'}
-                {viewMode === 'wireframe' && 'Wireframe Mode'}
-                {viewMode === 'xray' && 'X-Ray Vision'}
+                {viewMode === "standard" && "Standard View"}
+                {viewMode === "exploded" && "Exploded View"}
+                {viewMode === "wireframe" && "Wireframe Mode"}
+                {viewMode === "xray" && "X-Ray Vision"}
               </p>
               <p className="text-text-secondary text-xs">
-                {selectedPart ? 'Part Selected' : 'Interactive Mode'}
+                {selectedPart ? "Part Selected" : "Interactive Mode"}
               </p>
             </div>
           </div>

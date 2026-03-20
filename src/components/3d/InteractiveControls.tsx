@@ -1,8 +1,8 @@
-import { OrbitControls, PresentationControls } from '@react-three/drei';
-import { useProductStore } from '@/store/useProductStore';
-import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
-import type { OrbitControls as OrbitControlsType } from 'three-stdlib';
+import { OrbitControls, PresentationControls } from "@react-three/drei";
+import { useProductStore } from "@/store/useProductStore";
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
+import type { OrbitControls as OrbitControlsType } from "three-stdlib";
 
 export function InteractiveControls() {
   const interactionMode = useProductStore((state) => state.interactionMode);
@@ -15,7 +15,7 @@ export function InteractiveControls() {
     }
   });
 
-  if (interactionMode === 'orbit') {
+  if (interactionMode === "orbit") {
     return (
       <OrbitControls
         ref={controlsRef}
@@ -34,7 +34,7 @@ export function InteractiveControls() {
     );
   }
 
-  if (interactionMode === 'inspect') {
+  if (interactionMode === "inspect") {
     return (
       <PresentationControls
         global

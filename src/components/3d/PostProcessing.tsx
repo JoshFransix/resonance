@@ -1,9 +1,19 @@
-import { EffectComposer, Bloom, DepthOfField, ChromaticAberration, Vignette, SSAO, ToneMapping } from '@react-three/postprocessing';
-import { BlendFunction, ToneMappingMode } from 'postprocessing';
-import { useProductStore } from '@/store/useProductStore';
+import {
+  EffectComposer,
+  Bloom,
+  DepthOfField,
+  ChromaticAberration,
+  Vignette,
+  SSAO,
+  ToneMapping,
+} from "@react-three/postprocessing";
+import { BlendFunction, ToneMappingMode } from "postprocessing";
+import { useProductStore } from "@/store/useProductStore";
 
 export function PostProcessing() {
-  const isPostProcessingEnabled = useProductStore((state) => state.isPostProcessingEnabled);
+  const isPostProcessingEnabled = useProductStore(
+    (state) => state.isPostProcessingEnabled,
+  );
 
   if (!isPostProcessingEnabled) return null;
 
