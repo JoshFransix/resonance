@@ -9,11 +9,16 @@ import {
 } from "@react-three/postprocessing";
 import { BlendFunction, ToneMappingMode } from "postprocessing";
 import { useProductStore } from "@/store/useProductStore";
+import * as THREE from "three";
+import { useMemo } from "react";
 
 export function PostProcessing() {
   const isPostProcessingEnabled = useProductStore(
     (state) => state.isPostProcessingEnabled,
   );
+
+  const ssaoColor = useMemo(() => new THREE.Color("black"), []);
+  const chromaticOffset = useMemo(() => new THREE.Vector2(0.0005, 0.0005), []);
 
   if (!isPostProcessingEnabled) return null;
 
@@ -29,7 +34,11 @@ export function PostProcessing() {
         intensity={30}
         radius={0.5}
         luminanceInfluence={0.5}
-        color="black"
+        color={ssaoColor}
+        worldDistanceThreshold={0.1}
+        worldDistanceFalloff={0.1}
+        worldProximityThreshold={0.1}
+        worldProximityFalloff={0.1}
       />
       <DepthOfField
         focusDistance={0.01}
@@ -38,7 +47,9 @@ export function PostProcessing() {
         height={480}
       />
       <ChromaticAberration
-        offset={[0.0005, 0.0005]}
+        offset={chromaticOffset}
+        radialModulation={false}
+        modulationOffset={0}
         blendFunction={BlendFunction.NORMAL}
       />
       <Vignette

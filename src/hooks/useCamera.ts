@@ -23,13 +23,6 @@ export function useCamera() {
       timelineRef.current.kill();
     }
 
-    const config = {
-      ...CAMERA_POSITIONS[state],
-      duration: 1.5,
-      ease: 'power2.inOut',
-      ...customConfig,
-    };
-
     timelineRef.current = gsap.timeline();
   };
 

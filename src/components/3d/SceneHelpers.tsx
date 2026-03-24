@@ -1,12 +1,9 @@
-import { Grid, Stats, useHelper } from "@react-three/drei";
+import { Grid, Stats } from "@react-three/drei";
 import { useProductStore } from "@/store/useProductStore";
-import { useRef } from "react";
-import * as THREE from "three";
 
 export function SceneHelpers() {
   const showGrid = useProductStore((state) => state.showGrid);
   const showStats = useProductStore((state) => state.showStats);
-  const lightRef = useRef<THREE.DirectionalLight>(null);
 
   return (
     <>
