@@ -1,22 +1,21 @@
 import { useEffect, useRef } from 'react';
 import { useProductStore } from '@/store/useProductStore';
-import { CAMERA_POSITIONS } from '@/utils/constants';
 import type { CameraState } from '@/store/useProductStore';
 import { gsap } from 'gsap';
 
-interface CameraConfig {
-  position: [number, number, number];
-  target: [number, number, number];
-  duration?: number;
-  ease?: string;
-}
+// interface CameraConfig {
+//   position: [number, number, number];
+//   target: [number, number, number];
+//   duration?: number;
+//   ease?: string;
+// }s
 
 export function useCamera() {
   const cameraState = useProductStore((state) => state.cameraState);
   const setCameraState = useProductStore((state) => state.setCameraState);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
-  const transitionToState = (state: CameraState, customConfig?: Partial<CameraConfig>) => {
+  const transitionToState = (state: CameraState) => {
     setCameraState(state);
     
     if (timelineRef.current) {
